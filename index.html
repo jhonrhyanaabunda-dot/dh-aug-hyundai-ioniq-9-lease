@@ -49,6 +49,17 @@
   "@graph": [
     {
       "@type": "VideoObject",
+      "@id": "https://www.hyundaidalton.com/hyundai-ioniq-9-lease-deals/#video-ioniq9-film",
+      "name": "IONIQ 9 Global Launch - Built To Belong | Hyundai",
+      "description": "Hyundai's own launch film for the IONIQ 9. It is brand footage, not our lot, but it shows the three-row cabin and the proportions better than photos do.",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/Y3iXrBWNNRA",
+      "contentUrl": "https://www.youtube.com/watch?v=Y3iXrBWNNRA",
+      "thumbnailUrl": "https://img.youtube.com/vi/Y3iXrBWNNRA/maxresdefault.jpg",
+      "uploadDate": "2026-08-01",
+      "publisher": { "@id": "https://www.hyundaidalton.com/#dealer" }
+    },
+    {
+      "@type": "VideoObject",
       "@id": "https://www.hyundaidalton.com/hyundai-ioniq-9-lease-deals/#video-showroom",
       "name": "Dalton Hyundai National City — hybrids to electrics on the showroom floor",
       "description": "A Dalton Hyundai National City team member on the showroom floor explaining how the store moves shoppers from hybrid models to Hyundai's electric lineup.",
@@ -1354,6 +1365,15 @@
 
   /* July parity: deck spans the wrap at July's computed metrics (17px/1.7, no cap) */
   .hero .deck { font-size: 17px; line-height: 1.7; max-width: none; margin: 0 0 20px; }
+
+  /* Responsive 16:9 YouTube embed (video-embed rule: nocookie, lazy, captioned) */
+  .yt-embed { margin: 28px 0 8px; }
+  .yt-embed .frame { position: relative; width: 100%; padding-top: 56.25%;
+    background: #000; border-radius: 12px; overflow: hidden; }
+  .yt-embed .frame iframe { position: absolute; top: 0; left: 0; width: 100%;
+    height: 100%; border: 0; }
+  .yt-embed figcaption { margin-top: 10px; font-size: 13px; line-height: 1.5;
+    color: var(--muted); max-width: 70ch; }
 </style>
 </head>
 <body>
@@ -1462,6 +1482,17 @@
         <div class="section-num"><span>02</span><span>What it is</span></div>
         <h2 class="section-h">What the IONIQ 9 actually is, <em>and who it's for</em>.</h2>
         <p class="lede">The IONIQ 9 is Hyundai's full-size, three-row electric SUV, the biggest EV the brand builds, riding on the same 800-volt E-GMP platform as the IONIQ 5 and IONIQ 6 but stretched out for genuine seven- and six-seat family duty.</p>
+        <figure class="yt-embed" id="video-ioniq9-film">
+          <div class="frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/Y3iXrBWNNRA?rel=0&amp;modestbranding=1"
+                    title="IONIQ 9 Global Launch - Built To Belong | Hyundai"
+                    loading="lazy"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+          </div>
+          <figcaption>Hyundai's own launch film for the IONIQ 9. It is brand footage, not our lot, but it shows the three-row cabin and the proportions better than photos do.</figcaption>
+        </figure>
+
         <p>It slots above the IONIQ 5 in size and price, and it's aimed squarely at the household that would otherwise be cross-shopping a Telluride, a Kia EV9, or a three-row gas SUV. This is a vehicle you buy because you need the third row to be usable by actual humans, not a parcel shelf. If you only occasionally carry more than five people, the smaller, cheaper IONIQ 5 may be the smarter lease, and we'll say so.</p>
 
         <p>On range, the EPA-rated figures vary by trim and wheel size. You can verify the exact numbers for any specific configuration at <a href="https://www.fueleconomy.gov" rel="noopener" target="_blank">fueleconomy.gov</a>, the EPA's official ratings database, we'd rather point you to the government figure than have you take a salesperson's word for it. For a National City household running kids to Chula Vista, commuting up the 805 to Kearny Mesa, and taking the occasional run out to El Cajon, the IONIQ 9's range envelope means most owners charge at home overnight and rarely think about it.</p>
