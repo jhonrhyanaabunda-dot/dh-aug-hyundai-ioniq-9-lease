@@ -623,25 +623,6 @@
   h2.section-h em { font-style: normal; color: var(--blue); font-weight: 700; }
   h3 { font-family: var(--display); font-weight: 700; font-size: 22px; line-height: 1.25; letter-spacing: -0.015em; margin: 36px 0 16px; color: var(--ink); }
   p { margin: 0 0 22px; line-height: 1.7; }
-  p.lede::first-letter {
-    font-family: var(--display);
-    font-weight: 700;
-    font-size: 4.2em;
-    line-height: 0.85;
-    float: left;
-    padding: 6px 14px 0 0;
-    color: var(--blue);
-  }
-  /* Disable drop cap on ledes that start with a digit or symbol, drop caps need a real letter to work */
-  p.lede.no-cap::first-letter {
-    font-family: inherit;
-    font-weight: inherit;
-    font-size: inherit;
-    line-height: inherit;
-    float: none;
-    padding: 0;
-    color: inherit;
-  }
   p.lede { font-size: 19px; line-height: 1.55; color: var(--ink-soft); margin-bottom: 28px; }
 
   ul.bullets { padding-left: 20px; margin: 0 0 28px; }
@@ -732,19 +713,6 @@
   .spec-strip .num { font-family: var(--display); font-size: 38px; font-weight: 600; line-height: 1.05; color: var(--blue-deep); letter-spacing: -0.015em; font-feature-settings: "lnum"; min-height: calc(38px * 1.05); margin-bottom: 14px; white-space: nowrap; }
   .spec-strip .num small { font-size: 14px; color: var(--ink-soft); font-weight: 400; margin-left: 3px; letter-spacing: 0; }
   .spec-strip .lbl { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-top: 0; line-height: 1.5; min-height: calc(11px * 1.5 * 2); display: flex; align-items: flex-start; }
-
-  /* Stats variant: short numeric headers, bigger type, centered, modest breakout */
-  .spec-strip.stats {
-    background: var(--white);
-    margin-left: -80px;
-    margin-right: -80px;
-  }
-  .spec-strip.stats .item { align-items: center; text-align: center; padding: 28px 16px; }
-  .spec-strip.stats .item:first-child { padding-left: 16px; }
-  .spec-strip.stats .item:last-child { padding-right: 16px; }
-  .spec-strip.stats .num { font-size: 44px; line-height: 1; min-height: 48px; margin-bottom: 24px; white-space: nowrap; }
-  .spec-strip.stats .num small { font-size: 15px; letter-spacing: 0; margin-left: 4px; }
-  .spec-strip.stats .lbl { min-height: calc(11px * 1.5 * 5); display: flex; align-items: flex-start; justify-content: center; text-align: center; }
 
   /* ---------- Safety badge ---------- */
   .safety-banner {
@@ -1039,24 +1007,6 @@
     max-width: 620px;
     margin: 0 0 24px;
   }
-  .trust-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0;
-    margin-top: 48px;
-    padding-top: 40px;
-    border-top: 1px solid rgba(255,255,255,.15);
-  }
-  .trust-grid .item {
-    padding: 8px 28px 8px 0;
-    border-right: 1px solid rgba(255,255,255,.12);
-  }
-  .trust-grid .item:last-child { border-right: none; }
-  .trust-grid .item:not(:first-child) { padding-left: 28px; }
-  .trust-grid .item .num { font-family: var(--display); font-size: 56px; font-weight: 500; line-height: 1; color: var(--white); letter-spacing: -0.02em; font-feature-settings: "lnum"; }
-  .trust-grid .item .num small { font-size: 22px; color: #9cc8ff; }
-  .trust-grid .item .lbl { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,.6); margin-top: 16px; line-height: 1.55; }
-
   .findlay-extras {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -1229,28 +1179,16 @@
   @media (max-width: 1280px) {
     main.wrap { max-width: var(--maxw); }
     .article-grid { grid-template-columns: 200px minmax(0, 1fr) 260px; gap: 48px 64px; }
-    .spec-strip.stats { margin-left: -64px; margin-right: -64px; }
   }
   @media (max-width: 1100px) {
     .article-grid { grid-template-columns: 200px minmax(0, 1fr); gap: 48px; }
     .gutter { display: none; }
-    .spec-strip.stats { margin-left: -48px; margin-right: 0; }
-    .trust-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0;
-    }
-    .trust-grid .item { padding: 24px 24px 24px 0 !important; border-right: 1px solid rgba(255,255,255,.12); border-bottom: 1px solid rgba(255,255,255,.12); }
-    .trust-grid .item:not(:first-child) { padding-left: 0 !important; }
-    .trust-grid .item:nth-child(2) { padding-left: 24px !important; border-right: none; }
-    .trust-grid .item:nth-child(3) { padding-left: 0 !important; border-bottom: none; }
-    .trust-grid .item:nth-child(4) { padding-left: 24px !important; border-right: none; border-bottom: none; }
     .findlay-extras { gap: 36px; }
     .cross-table { overflow-x: auto; }
     .cross-table table { min-width: 720px; }
   }
   @media (max-width: 760px) {
     .wrap { padding: 0 20px; max-width: 100%; }
-    .spec-strip.stats { margin-left: 0; margin-right: 0; }
     .article-grid { grid-template-columns: minmax(0, 1fr); gap: 32px; padding-top: 48px; max-width: 100%; }
     .article-grid > .body { max-width: 100%; }
     .toc { position: static; max-height: none; overflow-y: visible; }
@@ -1266,12 +1204,6 @@
     .findlay-band { padding: 48px 0 40px; }
     .findlay-band h2 { font-size: 32px; }
     .findlay-band .band-deck { font-size: 17px; }
-    .trust-grid { grid-template-columns: 1fr 1fr; padding-top: 36px; margin-top: 44px; }
-    .trust-grid .item { padding: 20px 16px 20px 0 !important; }
-    .trust-grid .item:nth-child(2) { padding-left: 16px !important; }
-    .trust-grid .item:nth-child(3) { padding-left: 0 !important; padding-top: 24px !important; border-top: 1px solid rgba(255,255,255,.12); }
-    .trust-grid .item:nth-child(4) { padding-left: 16px !important; padding-top: 24px !important; border-top: 1px solid rgba(255,255,255,.12); }
-    .trust-grid .item .num { font-size: 40px; }
     .spec-strip { grid-template-columns: 1fr 1fr; }
     .spec-strip .item { border-right: none; border-bottom: 1px solid var(--rule); padding: 24px 16px; }
     .spec-strip .item:nth-child(odd) { padding-left: 0; }
@@ -1289,7 +1221,6 @@
     .drives .dist { display: none; }
     h3 { margin: 36px 0 14px; }
     h2.section-h { font-size: clamp(26px, 7vw, 36px); }
-    p.lede::first-letter { font-size: 3.4em; padding: 4px 10px 0 0; }
     /* Large numbers in spec strip can overflow on mobile */
     .spec-strip .num { font-size: 36px; }
   }
@@ -1370,8 +1301,6 @@
   @media (max-width: 380px) {
     .wrap { padding: 0 16px !important; }
     .hero-meta { grid-template-columns: 1fr !important; }
-    .trust-grid { grid-template-columns: 1fr !important; }
-    .trust-grid .item { border-right: none !important; padding-left: 0 !important; }
     .spec-strip { grid-template-columns: 1fr !important; }
     .spec-strip .item { padding-right: 0 !important; }
   }
@@ -1453,15 +1382,6 @@
   .spec-strip.centered .item{align-items:center;text-align:center}
   .spec-strip.centered .num{text-align:center}
   .spec-strip.centered .lbl{justify-content:center;text-align:center}
-  /* Center the dark trust-grid stats */
-  .trust-grid .item{align-items:center;text-align:center}
-  .trust-grid .item .lbl{text-align:center;justify-content:center}
-
-  /* Wide text tokens (Mon-Sat, Frank) overflowed the cell dividers at 44px;
-     shrink the number and tighten padding so all four fit on one line */
-  .spec-strip.stats.fitrow .num{font-size:28px}
-  .spec-strip.stats.fitrow .num small{font-size:12px}
-  .spec-strip.stats.fitrow .item{padding-left:12px;padding-right:12px}
 </style>
 </head>
 <body>
@@ -1472,7 +1392,7 @@
 <header class="hero">
   <div class="wrap">
     <div class="eyebrow"><span class="pip"></span> Lease &amp; Finance · Dalton Hyundai National City</div>
-    <h1>Hyundai IONIQ 9 lease deals, built around <em>your number.</em></h1>
+    <h1>Hyundai IONIQ 9 lease deals, built around <em>you.</em></h1>
     <p class="deck">We lease and finance the three-row electric IONIQ 9 at 3150 National City Blvd. EV incentives and money factors reset about monthly, so a number you saw in June may be gone in August. Build your quote at <a href="https://www.hyundaidalton.com" rel="noopener">hyundaidalton.com</a> or call <a class="tel" href="tel:+16194523217">(619) 452-3217</a> for today's figure.</p>
 
     <div class="hero-meta">
@@ -1539,10 +1459,10 @@
       <section class="s" id="real-number">
         <div class="section-num"><span>01</span><span>From the sales floor</span></div>
         <h2 class="section-h">An IONIQ 9 lease is a <em>different kind of math</em>.</h2>
-        <p class="lede">We sell and lease a lot of EVs at 3150 National City Blvd, and we'll tell you up front: leasing a three-row electric SUV is not the same conversation as leasing a gas Tucson.</p>
-        <p>The numbers move differently, the incentives move faster, and the residual value, the price the bank predicts the vehicle will be worth at lease-end, does more of the heavy lifting on your monthly payment than most shoppers expect. That is good news for the IONIQ 9. Because Hyundai's full-size electric SUV is new and the brand sets a relatively healthy residual on it, a lease can put you in a $60,000-class vehicle for a monthly figure that surprises people.</p>
+        <p class="lede">Here's the honest truth most lease pages won't tell you: the big <a href="https://www.hyundaiusa.com/us/en/special-offers" rel="noopener">advertised lease</a> you see in a national Hyundai banner almost never matches what you'll sign for.</p>
+        <p>Those headline figures assume top-tier credit, a specific trim, a set amount due at signing, and a regional incentive structure that may not apply in California. When a customer walked into our National City showroom last month waving a screenshot of a headline IONIQ 9 lease ad, we pulled the actual program details, ran the numbers against our real inventory, and showed them where the gap was. The advertised deal required several thousand dollars down and a credit tier they didn't qualify for. We restructured it to a lower drive-off that fit their budget. The payment was different, but it was realistic and attainable. They drove the car home.</p>
 
-        <p>The catch, and we'll get to the catches because there are real ones, is that EV lease offers are some of the most time-sensitive deals in the car business. A number you screenshotted in June may be gone in August. This page explains how IONIQ 9 lease deals work, what our team checks before we hand you a quote, where the IONIQ 9 sits against the competition, and how the buying process runs here in National City. It's long on purpose. We'd rather you understand the deal than be impressed by it.</p>
+        <p>That's the difference between an ad and a tailored quote. This page walks you through how the IONIQ 9 lease calculation works, what we do here in National City to keep you from overpaying, and how to get a number built around <em>you</em>.</p>
 
         <blockquote class="pull">
           A number you screenshotted in June may be gone in August. We pull and verify the current program for your exact trim the day you shop, not a stale teaser rate.
@@ -1784,8 +1704,7 @@
           </article>
         </div>
 
-        <h3>The contrarian take we give people at the desk</h3>
-        <p>If you're a very high-mileage driver, a rideshare-heavy schedule, a long daily commute from El Cajon, a job that has you all over the county, a lease is often the <em>wrong</em> tool, even though the monthly payment looks attractive. The mileage overage and wear charges can erase the savings. In that case we'll steer you toward a finance deal or a longer-term loan on purpose, even though a lease would look better on paper today. We'd rather you come back happy in three years than be surprised at turn-in. Not sure which way to go? Tell us how you drive and we'll run both numbers side by side so the choice is obvious instead of a guess.</p>
+        <p>Here's where we'll steer some people away from leasing. If you don't drive a predictable amount of miles each year, leasing an IONIQ 9 might be the wrong call. We've sat down with rideshare drivers and big-commute customers, looked at their real annual mileage, and told them straight up that a lease's overage penalties would eat any monthly savings alive. For a 25,000-mile-a-year driver, financing almost always wins. We'd rather lose the lease and keep the customer than put someone in a deal that punishes them at turn-in.</p>
 
         <blockquote class="pull">
           We'd rather you come back happy in three years than be surprised at turn-in. Tell us how you drive and we'll run both numbers side by side before you decide.
@@ -1897,7 +1816,7 @@
         <p>Our service team runs Monday-Friday 7:00 AM - 6:00 PM and Saturday 8:00 AM - 3:00 PM (closed Sunday). You can reach service directly at <a class="tel" href="tel:+16193145768">(619) 314-5768</a>, and parts at <a class="tel" href="tel:+16196040487">(619) 604-0487</a>.</p>
 
         <h3>Trusted by drivers across San Diego County</h3>
-        <p>Dalton Hyundai National City is an established Hyundai dealership, rated 4.3 ★ from ≈2,586+ Google reviews. Formerly known as Frank Hyundai, the dealership has long served drivers throughout San Diego, Chula Vista, El Cajon, Kearny Mesa, and Imperial Beach. The team here, led by General Manager Cedric Butler, with sales managed by Sergio Martell and Mark Moore, runs the showroom on the principle that the right deal is one the customer would do again.</p>
+        <p>Dalton Hyundai National City is an established Hyundai dealership, rated 4.3 ★ from 2,586+ Google reviews. Formerly known as Frank Hyundai, the dealership has long served drivers from San Diego, Chula Vista, El Cajon, Kearny Mesa, and Imperial Beach. The team here, led by General Manager Cedric Butler, with sales managed by Sergio Martell and Mark Moore, runs the showroom on the principle that the right deal is one that the customer would do again.</p>
 
         <p>When you're ready to see the IONIQ 9 in person, visit us at 3150 National City Blvd, National City, CA 91950.</p>
 
@@ -1927,13 +1846,6 @@
           <li>Access to the Dalton VIP Advantage Program</li>
           <li>A sales team that's there to guide you every step of the way</li>
         </ul>
-
-        <div class="spec-strip stats fitrow" style="margin-left:0;margin-right:0">
-          <div class="item"><div class="num">4.3<small> ★</small></div><div class="lbl">Google rating across 2,586+ reviews</div></div>
-          <div class="item"><div class="num">VIP</div><div class="lbl">Complimentary alignment &amp; tire check every visit</div></div>
-          <div class="item"><div class="num">Mon-Sat</div><div class="lbl">Sales 9 AM to 8 PM · Sunday 10 AM to 6 PM</div></div>
-          <div class="item"><div class="num">Frank</div><div class="lbl">Formerly Frank Hyundai, serving San Diego for years</div></div>
-        </div>
 
         <h3>Three easy ways to start</h3>
         <ol class="bullets">
@@ -1992,25 +1904,6 @@
     <div class="eyebrow">Dalton Hyundai National City</div>
     <h2>Trusted by drivers <em>across San Diego County</em>.</h2>
     <p class="band-deck">Formerly Frank Hyundai, Dalton Hyundai National City has long served drivers throughout San Diego, Chula Vista, El Cajon, Kearny Mesa, and Imperial Beach, led by General Manager Cedric Butler, with sales managed by Sergio Martell and Mark Moore.</p>
-
-    <div class="trust-grid">
-      <div class="item">
-        <div class="num">4.3<small> ★</small></div>
-        <div class="lbl">Google rating across<br>2,586+ reviews</div>
-      </div>
-      <div class="item">
-        <div class="num">VIP</div>
-        <div class="lbl">Free alignment &amp; tire<br>check every visit</div>
-      </div>
-      <div class="item">
-        <div class="num">IONIQ&nbsp;9</div>
-        <div class="lbl">Three-row EVs to<br>lease or finance</div>
-      </div>
-      <div class="item">
-        <div class="num">Frank</div>
-        <div class="lbl">Formerly Frank<br>Hyundai</div>
-      </div>
-    </div>
 
     <div class="findlay-extras">
       <div>
