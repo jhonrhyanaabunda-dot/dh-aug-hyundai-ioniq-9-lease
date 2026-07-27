@@ -1448,6 +1448,14 @@
     height: 100%; border: 0; }
   .yt-embed figcaption { margin-top: 10px; font-size: 13px; line-height: 1.5;
     color: var(--muted); max-width: 70ch; }
+
+  /* Center spec-strip numbers without .stats full-bleed margins */
+  .spec-strip.centered .item{align-items:center;text-align:center}
+  .spec-strip.centered .num{text-align:center}
+  .spec-strip.centered .lbl{justify-content:center;text-align:center}
+  /* Center the dark trust-grid stats */
+  .trust-grid .item{align-items:center;text-align:center}
+  .trust-grid .item .lbl{text-align:center;justify-content:center}
 </style>
 </head>
 <body>
@@ -1585,7 +1593,7 @@
         <h3>Trims, and the trade-off worth modeling</h3>
         <p>Trims are tiered the way Hyundai usually does it: a well-equipped base, a mid-grade that adds the comfort and tech most families want, and a loaded top trim with larger wheels, premium audio, and the driver-assist suite. Higher trims carry a higher cap cost, which raises the lease payment, but they also often carry a higher residual percentage, which softens the blow. That trade-off is exactly the kind of thing worth modeling on two or three trims side by side before you decide, and it's a five-minute exercise at our desk.</p>
 
-        <div class="spec-strip">
+        <div class="spec-strip centered">
           <div class="item"><div class="num">3<small> rows</small></div><div class="lbl">Six- and seven-seat family duty</div></div>
           <div class="item"><div class="num">800<small> V</small></div><div class="lbl">E-GMP architecture, high-speed DC charging</div></div>
           <div class="item"><div class="num">E-GMP</div><div class="lbl">Shared platform with IONIQ 5 and IONIQ 6</div></div>
@@ -1914,7 +1922,7 @@
           <li>A sales team that's there to guide you every step of the way</li>
         </ul>
 
-        <div class="spec-strip stats">
+        <div class="spec-strip stats" style="margin-left:0;margin-right:0">
           <div class="item"><div class="num">4.3<small> ★</small></div><div class="lbl">Google rating across 2,586+ reviews</div></div>
           <div class="item"><div class="num">VIP</div><div class="lbl">Complimentary alignment &amp; tire check every visit</div></div>
           <div class="item"><div class="num">Mon-Sat</div><div class="lbl">Sales 9 AM to 8 PM · Sunday 10 AM to 6 PM</div></div>
