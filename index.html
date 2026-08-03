@@ -971,6 +971,19 @@
     font-weight: 700;
   }
 
+  /* Photo block: image box with a visible caption beneath */
+  .photo-block { margin: 36px 0; }
+  .photo-block .full-img { margin: 0; }
+  .photo-block figcaption { margin-top: 10px; font-size: 13px; line-height: 1.5; color: var(--muted); max-width: 70ch; }
+
+  /* Stat row in the dark band (evergreen trust-grid) */
+  .findlay-band .trust-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 24px; margin-top: 50px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,.15); }
+  .findlay-band .trust-grid .item .num { font-family: var(--display); font-size: 56px; font-weight: 500; line-height: 1; color: var(--white); letter-spacing: -.02em; font-feature-settings: "lnum"; }
+  .findlay-band .trust-grid .item .num small { font-size: 22px; color: #9cc8ff; }
+  .findlay-band .trust-grid .item .lbl { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.65); margin-top: 10px; line-height: 1.4; }
+  @media (max-width: 900px) { .findlay-band .trust-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 32px; } }
+  @media (max-width: 560px) { .findlay-band .trust-grid { grid-template-columns: minmax(0,1fr); gap: 24px; } .findlay-band .trust-grid .item .num { font-size: 44px; } }
+
   /* ---------- Why Dalton band ---------- */
   .findlay-band {
     background: var(--ink);
@@ -1767,10 +1780,11 @@
         <div class="section-num"><span>05</span><span>Cross-shopping</span></div>
         <h2 class="section-h">How the IONIQ 9 stacks up <em>against the obvious cross-shops</em>.</h2>
         <p class="lede">If you're shopping a three-row IONIQ 9 lease, you're almost certainly looking at a couple of other vehicles too. Here's how we frame it for our customers.</p>
-        <figure class="full-img cargo has-photo" role="img" aria-label="A Hyundai IONIQ 5, the smaller two-row electric SUV that shares the IONIQ 9 800-volt platform">
-          <img class="scene" src="hyundai-ioniq-5-comparison.webp" alt="A Hyundai IONIQ 5, the smaller two-row electric SUV that shares the IONIQ 9 800-volt platform" loading="lazy" decoding="async" width="1440" height="810" />
-          <span class="credit">HYUNDAI IONIQ 5</span>
-          <figcaption class="visually-hidden">The IONIQ 5 is the smaller two-row sibling on the same 800-volt E-GMP platform, and a common cross-shop against the three-row IONIQ 9.</figcaption>
+        <figure class="photo-block">
+          <div class="full-img cargo has-photo" role="img" aria-label="A Hyundai IONIQ 5, the smaller two-row electric SUV that shares the IONIQ 9 800-volt platform">
+            <img class="scene" src="hyundai-ioniq-5-comparison.webp" alt="A Hyundai IONIQ 5, the smaller two-row electric SUV that shares the IONIQ 9 800-volt platform" loading="lazy" decoding="async" width="1440" height="810" />
+          </div>
+          <figcaption>The IONIQ 5 is the smaller two-row sibling on the same 800-volt E-GMP platform, and a common cross-shop against the three-row IONIQ 9.</figcaption>
         </figure>
 
 
@@ -1833,10 +1847,11 @@
         <div class="section-num"><span>07</span><span>Owning &amp; servicing it</span></div>
         <h2 class="section-h">Owning and servicing <em>your IONIQ 9 here</em>.</h2>
         <p class="lede">The lease doesn't end when you drive off the lot. That's where ownership starts, and it's a big reason to lease where you will be serviced.</p>
-        <figure class="full-img cargo has-photo" role="img" aria-label="The Dalton Hyundai National City dealership on 3150 National City Blvd">
-          <img class="scene" src="dalton-hyundai-dealership.webp" alt="The Dalton Hyundai National City dealership on 3150 National City Blvd" loading="lazy" decoding="async" width="1360" height="635" />
-          <span class="credit">DALTON HYUNDAI NATIONAL CITY</span>
-          <figcaption class="visually-hidden">Where the servicing happens: Dalton Hyundai National City, 3150 National City Blvd.</figcaption>
+        <figure class="photo-block">
+          <div class="full-img cargo has-photo" role="img" aria-label="The Dalton Hyundai National City dealership on 3150 National City Blvd">
+            <img class="scene" src="dalton-hyundai-dealership.webp" alt="The Dalton Hyundai National City dealership on 3150 National City Blvd" loading="lazy" decoding="async" width="1360" height="635" />
+          </div>
+          <figcaption>Where the servicing happens: Dalton Hyundai National City, 3150 National City Blvd, where your IONIQ 9 is delivered and serviced.</figcaption>
         </figure>
 
 
@@ -1923,6 +1938,13 @@
     <div class="eyebrow">Dalton Hyundai National City</div>
     <h2>Trusted by drivers <em>across San Diego County</em>.</h2>
     <p class="band-deck">Formerly Frank Hyundai, Dalton Hyundai National City has long served drivers throughout San Diego, Chula Vista, El Cajon, Kearny Mesa, and Imperial Beach, led by General Manager Cedric Butler, with sales managed by Sergio Martell and Mark Moore.</p>
+
+    <div class="trust-grid">
+      <div class="item"><div class="num">4.3<small> ★</small></div><div class="lbl">Google rating &middot; 2,586+ reviews</div></div>
+      <div class="item"><div class="num">7<small> days</small></div><div class="lbl">Sales open seven days a week</div></div>
+      <div class="item"><div class="num">VIP</div><div class="lbl">Complimentary alignment and tire check, every visit</div></div>
+      <div class="item"><div class="num">800<small> V</small></div><div class="lbl">E-GMP architecture, high-speed DC charging</div></div>
+    </div>
 
     <div class="findlay-extras">
       <div>
